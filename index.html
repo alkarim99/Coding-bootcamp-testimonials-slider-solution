@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      background-image: url(images/pattern-curve.svg);
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+    }
+    .content{
+      padding: 50px;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: auto;
+      grid-template-areas: "main image";
+      place-content: center;
+      place-items: center;
+      background-image: url(images/pattern-bg.svg);
+      background-size: contain;
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+    .content .main{
+      grid-area: main;
+      width: 650px;
+      margin-right: -85px;
+      display: flex;
+      flex-direction: column;
+      background-image: url(images/pattern-quotes.svg);
+      background-size: 120px;
+      background-position: 95px 0;
+      background-repeat: no-repeat;
+      animation: mainin 2s ease-out;
+    }
+    .content .main p.comment{
+      margin-top: 70px;
+      font-weight: 300;
+      position: relative;
+    }
+    .content .main .id{
+      font-size: 23px;
+      font-weight: 500;
+      display: flex;
+    }
+    .content .main .id p.name{
+      margin-right: 20px;
+    }
+    .content .main .id p.title{
+      color: hsl(240, 18%, 77%);
+    }
+    .content .image{
+      grid-area: image;
+      width: 540px;
+    }
+    .content .image img.profil{
+      box-shadow: 0px 3px 30px 0px #888;
+      animation: imagein 2s ease-out;
+    }
+    .content .image img.icon{
+      width: 10%;
+    }
+    .content .image .nav{
+      padding: 20px;
+      background-color: #fff;
+      width: 100px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 30px;
+      position: absolute;
+      bottom: 10px;
+      margin-left: 30px;
+    }
+    .content-2{
+      display: none;
+    }
+
+    @keyframes mainin {
+      from {opacity: 0;}
+      to {opacity: 100%;}
+    }
+
+    @keyframes imagein {
+      from {opacity: 0;}
+      to {opacity: 100%;}
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width: 375px) {
+      body{
+        margin: 0;
+        padding: 0;
+        height: 47rem;
+        font-size: 20px;
+        background-image: url(images/pattern-curve.svg);
+        background-position: left bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+      }
+      .content{
+        margin-top: 30px;
+        padding: 25px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 
+          "image"
+          "main";
+        row-gap: 50px;
+        place-content: center;
+        place-items: center;
+        background-image: url(images/pattern-bg.svg);
+        background-size: contain;
+        background-position: top;
+        background-repeat: no-repeat;
+      }
+      .content .main{
+        grid-area: main;
+        width: auto;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(images/pattern-quotes.svg);
+        background-size: 80px;
+        background-position: top center;
+        background-repeat: no-repeat;
+        text-align: center;
+      }
+      .content .main p.comment{
+        margin-top: 40px;
+        font-weight: 300;
+        position: static;
+      }
+      .content .main .id{
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+      }
+      .content .main .id p.name{
+        margin: 0;
+      }
+      .content .main .id p.title{
+        margin: 0;
+      }
+      .content .main .id p.title{
+        color: hsl(240, 18%, 77%);
+      }
+      .content .image{
+        grid-area: image;
+        width: 350px;
+        text-align: center;
+        position: relative;
+      }
+      .content .image img.profil{
+        width: 300px;
+        box-shadow: 0px 3px 30px 0px #888;
+      }
+      .content .image img.icon{
+        width: 10%;
+      }
+      .content .image .nav{
+        padding: 15px 0;
+        background-color: #fff;
+        width: 90px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 30px;
+        position: absolute;
+        bottom: -15px;
+        right: 37%;
+      }
+      .content-2{
+        display: none;
+      }
+      .attribution { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content content-1" id="content-1">
+    <div class="main">
+      <p class="comment">
+        “ I’ve been interested in coding for a while but never taken the jump, until now. 
+          I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+          excited about the future. ”
+      </p>
+      <div class="id">
+        <p class="name">Tanya Sinclair</p>
+        <p class="title">UX Engineer</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="profil" src="images/image-tanya.jpg" alt="image-tanya">
+      <div class="nav">
+        <img onclick="prev1()" class="icon icon-prev" src="images/icon-prev.svg" alt="icon-prev">
+        <img onclick="next1()" class="icon icon-next" src="images/icon-next.svg" alt="icon-next">
+      </div>
+    </div>
+  </div>
+
+  <div class="content content-2" id="content-2">
+    <div class="main">
+      <p class="comment">
+        “ If you want to lay the best foundation possible I’d recommend taking this course. 
+          The depth the instructors go into is incredible. I now feel so confident about 
+          starting up as a professional developer. ”
+      </p>
+      <div class="id">
+        <p class="name">John Tarkpor</p>
+        <p class="title">Junior Front-end Developer</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="profil" src="images/image-john.jpg" alt="image-john">
+      <div class="nav">
+        <img onclick="prev2()" class="icon icon-prev" src="images/icon-prev.svg" alt="icon-prev">
+        <img onclick="next2()" class="icon icon-next" src="images/icon-next.svg" alt="icon-next">
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Abdullah Al-Karim</a>.
+  </div>
+
+  <script>
+    const content1 = document.querySelector('#content-1');
+    const content2 = document.querySelector('#content-2');
+
+    function prev1(){
+      content1.style.display='none';
+      content2.style.display='grid';
+    }
+    function next1(){
+      content1.style.display='none';
+      content2.style.display='grid';
+    }
+
+    function prev2(){
+      content1.style.display='grid';
+      content2.style.display='none';
+    }
+    function next2(){
+      content1.style.display='grid';
+      content2.style.display='none';
+    }
+  </script>
+</body>
+</html>
